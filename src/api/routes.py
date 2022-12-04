@@ -33,24 +33,24 @@ def create_members():
     data = request.data
     data = json.loads(data)
 
-    Member = member(
+    Member = Family(
         name= data["name"],
         lastname = data ["lastname"],
         years = data["years"])
-    db.session.add(member)
+    db.session.add(Member)
     db.session.commit()
 
     response_body = {
         "message": "Creado!"
     }
-    return jsonify(member.serialize())
+    return jsonify(Member.serialize())
 
 @api.route('/Family', methods=['DELETE'])
 def delete_members():
     data = request.data
     data = json.loads(data)
 
-    memberDel = member(
+    memberDel = Family(
     name= data["name"],
     lastname = data ["lastname"],
     years = data["years"])
