@@ -28,15 +28,6 @@ def get_members_id(family_id):
     return jsonify(result), 200
 
 
-
-
-
-
-   
-
-
-
-
 @api.route('/Family', methods=['POST'])
 def create_members():
     data = request.data
@@ -53,8 +44,6 @@ def create_members():
         "message": "Creado!"
     }
     return jsonify(member.serialize())
-
-
 
 @api.route('/Family', methods=['DELETE'])
 def delete_members():
